@@ -1,6 +1,11 @@
 ---
 name: kill-or-ship
 description: Use when someone explicitly asks for feedback on a product, side project, or PMF/validation plan, or asks how to validate it, who to validate with, whether to keep or kill it, or for a review of a signup/survey/landing-based validation approach. 사이드 프로젝트·PMF·검증·런칭·가격·채널 결정 피드백 요청 시. Not for general product strategy chat, feature requests, or unrelated questions.
+version: "1.0.0"
+argument-hint: "[project description or validation material] — 사이드 프로젝트나 PMF 관련 자료를 붙여주세요"
+metadata:
+  author: bibi-is-typing
+  github: https://github.com/bibi-is-typing/kill-or-ship
 ---
 
 # kill-or-ship
@@ -9,6 +14,28 @@ description: Use when someone explicitly asks for feedback on a product, side pr
 
 PMF 검증, 마케팅 전략, 사이드 프로젝트에 대한 구조적 피드백을 제공하는 자기 진화형 스킬.
 세션마다 자기 자신을 저널에 기록하고, 패턴이 누적되면 스킬 자체를 수정한다.
+
+---
+
+## Ouroboros Loop
+
+각 사이클은 반복하지 않는다. 진화한다. 평가의 출력이 다음 사이클의 입력이 된다.
+
+```
+READ → SHARPEN ──────── ONTOLOGY → DIAGNOSE → FEEDBACK
+  ↑   [Interview]         [Seed]    [Design]   [Deliver]    ↓
+  └──────────────── REFLECT → JOURNAL → EVOLVE ─────────────┘
+                   [Evaluate]            [Evolve]
+```
+
+**Double Diamond**
+
+◆ **Socratic Diamond**: SHARPEN (Discovery) → ONTOLOGY (Definition)
+표면 질문을 허물고 온톨로지 명료도를 확보한다.
+혼동도 ≤ 0.2가 통과 기준. 이 기준 전까지 Practical Diamond로 넘어가지 않는다.
+
+◆ **Practical Diamond**: DIAGNOSE (Design) → FEEDBACK (Delivery)
+명료해진 질문 위에서 진단하고, 구조적 피드백을 전달한다.
 
 ---
 
@@ -27,14 +54,14 @@ PMF 검증, 마케팅 전략, 사이드 프로젝트에 대한 구조적 피드�
 세션마다 7단계를 순서대로 거친다. 단계를 건너뛰지 않는다.
 
 ```
-① READ      과거 저널 읽기 (journal/)
-② SHARPEN   질문으로 본인이 본질에 도달하게
-②.5 ONTOLOGY 핵심 용어를 본인 말로 정의 (정의 게이트)
-③ DIAGNOSE  본질 짚기
-④ FEEDBACK  구조적 피드백
-⑤ REFLECT   자기 비판
-⑥ JOURNAL   학습 기록
-⑦ EVOLVE    스킬 자체 수정 (필요시)
+① READ        과거 저널 읽기 (journal/)
+② SHARPEN     질문으로 본인이 본질에 도달하게        [Interview · Socratic Diamond ◆]
+②.5 ONTOLOGY  핵심 용어를 본인 말로 정의 (정의 게이트) [Seed · Socratic Diamond ◆]
+③ DIAGNOSE    본질 짚기                             [Execute · Design ◇]
+④ FEEDBACK    구조적 피드백                          [Execute · Deliver ◇]
+⑤ REFLECT     자기 비판                             [Evaluate]
+⑥ JOURNAL     학습 기록                             [Evolve]
+⑦ EVOLVE      스킬 자체 수정 (필요시)                [Evolve]
 ```
 
 **출력 규율 (1회 원칙)**
@@ -81,6 +108,18 @@ PMF 검증, 마케팅 전략, 사이드 프로젝트에 대한 구조적 피드�
 1. 표면 질문을 복창하지 말고 되묻는다. 질문은 `references/sharpening-questions.md` 에서 고른다.
 2. 본인 대답에서 다시 한 겹 판다. 추상적이면 숫자·행동·기한으로 좁히는 되물음.
 3. **종료 조건(게이트 열림): 본인이 자기 입으로 "내가 진짜 물어야 할 건 ___였네"를 말한다.** 이 문장이 나오기 전엔 ③ DIAGNOSE로 넘어가지 않는다.
+
+**혼동도 게이트 (Ambiguity Gate)**
+
+혼동도 = 1 − Σ(명료도ᵢ × 가중치ᵢ). 임계값: ≤ 0.2.
+
+| 차원 | 가중치 | 무엇을 보는가 |
+|---|---|---|
+| 진짜 질문 명료도 | 40% | 본인이 자기 입으로 재정의한 질문이 있는가 |
+| 맥락 명료도 | 30% | 단계·시장·이해관계자가 드러났는가 |
+| 가설 명료도 | 30% | 검증하려는 것이 구체화됐는가 |
+
+이 게이트는 정성 판단이다. 숫자를 계산하지 않는다. 세 차원이 모두 "있음"에 가까우면 통과. 하나라도 "없음"에 가까우면 계속 판다. 수치는 기준의 형태이지, 채점 도구가 아니다.
 
 **게이트 (강하게 막는다)**
 본인이 진짜 질문을 재정의하기 전에는 진단·조언·길 분기·사례 어느 것도 시작하지 않는다. 질문을 던지고 멈춘다. 답을 기다린다.
@@ -339,6 +378,19 @@ SKILL.md·references/ 에 예시를 추가·수정할 때 예시는 **가공한 
 ```
 
 스킬은 세션마다 조금씩 진화한다.
+
+**온톨로지 수렴 감지**
+
+각 사이클의 출력은 다음 사이클의 입력이다. 진화가 멈추는 신호를 감지한다.
+
+| 상태 | 신호 | 대응 |
+|---|---|---|
+| 수렴 (진화 안정) | 같은 진단 패턴이 cases에 3회 이상, 스킬이 다루지 못함 | references/ 업데이트 트리거 |
+| 정체 (진화 실패) | EVOLVE 제안이 쌓이는데 승인 없음 | evolution.md에 "제안 미검토 N건" 명시 |
+| 발산 (맹점 반복) | reflections의 같은 맹점이 3회 이상 | 상시 체크 항목 승격 트리거 |
+| 하드캡 | 30 세션 누적 | 스킬 전면 재검토 신호 |
+
+이번 EVOLVE가 지난 EVOLVE와 같은 제안을 반복하고 있다면 정체다. 같은 방향을 더 파지 말고 다른 차원을 파야 한다.
 
 ---
 
